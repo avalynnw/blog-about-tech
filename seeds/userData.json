@@ -1,0 +1,18 @@
+[
+    {
+      "username": "ava",
+      "email": "ava@fakemail.com",
+      "password": "password123"
+    },
+        {
+      "username": "avalynn",
+      "email": "avalynn@fakemail.com",
+      "password": "password321"
+    },
+    {
+      "username": "cio",
+      "email": "cio@fakemail.com",
+      "password": "password666"
+    }
+  ]
+  

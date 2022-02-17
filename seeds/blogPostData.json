@@ -1,0 +1,23 @@
+[
+    {
+      "title": "my first post",
+      "content": "hi!"
+    },
+    {
+      "title": "anyone else on here?",
+      "content": "yo this app seems empty"
+    },
+    {
+      "title": "whats the point of eslint anyways",
+      "content": "just seems overly restrictive most of the time."
+    },
+    {
+      "title": "i forgot my password",
+      "content": "help!"
+    },
+    {
+      "title": "how do i post?",
+      "content": "did this work?"
+    }
+  ]
+  
