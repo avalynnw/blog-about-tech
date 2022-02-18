@@ -1,22 +1,30 @@
-<!-- Loop over each object in the projects array -->
-{{#each blogPosts as |blogPost| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <a href="/project/{{blogPost.id}}">{{blogPost.title}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      {{!-- <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed! --}}
-    </p>
-    <p>Posted by {{blogPost.user.username}} on {{format_date blogPost.date_created}}</p>
+<!-- Loop over each object in the blogPosts array -->
+{{#each blogPosts as |blogPost|}}
+  <div>
+    <div class="col">
+      <div class="card mt-2 mb-3">
+
+        <div class="card-header">
+          <div class="row">
+            <h2 class="col">
+              <a href="/blogPosts/{{blogPost.id}}">{{blogPost.title}}</a>
+            </h2>
+            <p class="col">
+              Posted by
+              {{blogPost.user.username}}
+              on
+              {{format_date blogPost.date_created}}
+            </p>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <p>
+            {{blogPost.content}}
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-md-7">
-    <p>
-      {{blogPost.content}}
-    </p>
-  </div>
-</div>
+
 {{/each}}
