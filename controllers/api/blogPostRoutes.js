@@ -42,7 +42,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 
 
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // get all blogPosts and JOIN with user data
     const blogPostData = await BlogPost.findAll({
@@ -58,7 +58,7 @@ router.get('/', async (req, res) => {
     const blogPosts = blogPostData.map((blogPost) => blogPost.get({ plain: true }));
 
     // pass serialized data and session flag into handlebars html template
-    res.render('home', { 
+    res.render('blogPosts', { 
       blogPosts, 
       logged_in: req.session.logged_in 
     });
