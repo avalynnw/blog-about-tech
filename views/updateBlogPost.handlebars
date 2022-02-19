@@ -1,0 +1,26 @@
+<div>
+  <div class="col">
+    <div class="card mt-2 mb-3">
+
+      <div class="card-header">
+        <div class="row">
+          <h2 class="col">
+            <a href="/blogPosts/{{blogPost.id}}">{{blogPost.title}}</a>
+          </h2>
+          <p class="col">
+            Posted by
+            {{blogPost.user.username}}
+            on
+            {{format_date blogPost.date_created}}
+          </p>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <p>
+          {{blogPost.content}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

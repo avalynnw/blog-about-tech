@@ -43,7 +43,7 @@ router.get('/blogPosts/:id', async (req, res) => {
     const blogPost = blogPostData.get({ plain: true });
 
     // pass serialized data and session flag into handlebars html template
-    res.render('blogPosts', {
+    res.render('updateBlogPost', {
       ...blogPost,
       logged_in: req.session.logged_in
     });

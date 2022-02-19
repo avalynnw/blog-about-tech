@@ -42,30 +42,30 @@ router.delete('/:id', withAuth, async (req, res) => {
 
 
 
-router.get('/', withAuth, async (req, res) => {
-  try {
-    // get all blogPosts and JOIN with user data
-    const blogPostData = await BlogPost.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['username'],
-        },
-      ],
-    });
+// router.get('/', withAuth, async (req, res) => {
+//   try {
+//     // get all blogPosts and JOIN with user data
+//     const blogPostData = await BlogPost.findAll({
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['username'],
+//         },
+//       ],
+//     });
 
-    // serialize data so the template can read it
-    const blogPosts = blogPostData.map((blogPost) => blogPost.get({ plain: true }));
+//     // serialize data so the template can read it
+//     const blogPosts = blogPostData.map((blogPost) => blogPost.get({ plain: true }));
 
-    // pass serialized data and session flag into handlebars html template
-    res.render('blogPosts', { 
-      blogPosts, 
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     // pass serialized data and session flag into handlebars html template
+//     res.render('blogPosts', { 
+//       blogPosts, 
+//       logged_in: req.session.logged_in 
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 
 

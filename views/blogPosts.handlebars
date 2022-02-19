@@ -9,8 +9,8 @@
 
 
   {{!-- TODO: fix this so it shows the user's relevant posts --}}
-  {{#if blogPosts.length}}
-  <div class="col-md-6 project-list">
+  {{!-- {{#if blogPosts.length}} --}}
+  <div class="col-md-6 blogPost-list">
     <h3>Your Posts:</h3>
 
     {{#each blogPosts as |BlogPost|}}
@@ -24,7 +24,7 @@
     </div>
     {{/each}}
   </div>
-  {{/if}}
+  {{!-- {{/if}} --}}
   
   
   <button class="btn btn-primary"><a href="/blogPosts">+new post</a></button>
