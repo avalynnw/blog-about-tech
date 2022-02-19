@@ -22,13 +22,13 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     // checks if there is a user with an email matching the input
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const userData = await User.findOne({ where: { username: req.body.username } });
 
-    // if there's no user with that email, send an error
+    // if there's no user with that username, send an error
     if (!userData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'incorrect username or password, please try again' });
       return;
     }
 
@@ -39,7 +39,7 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'incorrect username or password, please try again' });
       return;
     }
 

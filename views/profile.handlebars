@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-auto">
+    <h1>{{username}}'s profile</h1>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+  {{#if blogPosts.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Projects:</h3>
+
+    {{#each blogPosts as |BlogPost|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{BlogPost.id}}">{{BlogPost.username}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{BlogPost.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+  
+  
+  <button class="btn btn-primary"><a href="/blogPosts">+new post</a></button>
+
+
+</div>
+
+<script src="./js/profile.js"></script>
